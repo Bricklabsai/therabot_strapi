@@ -12,7 +12,6 @@ export default factories.createCoreController('api::post.post', ({ strapi }) => 
         const { id } = ctx.params;
         let slug = id;
         ctx.params['slug'] = slug;
-        console.log('slug: ', ctx)
         const entity = await strapi.db.query('api::post.post').findOne({
             where: { slug }, populate: true,
         });
