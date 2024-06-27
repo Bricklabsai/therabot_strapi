@@ -18,9 +18,6 @@
     "excerpt": {
       "type": "text"
     },
-    "visibility": {
-      "type": "boolean"
-    },
     "featuredImage": {
       "type": "media",
       "multiple": false,
@@ -31,9 +28,6 @@
         "videos",
         "audios"
       ]
-    },
-    "readingTime": {
-      "type": "string"
     },
     "category": {
       "type": "relation",
