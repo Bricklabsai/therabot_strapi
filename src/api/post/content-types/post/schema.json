@@ -13,10 +13,12 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "excerpt": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "featuredImage": {
       "type": "media",
@@ -37,7 +39,8 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "title"
+      "targetField": "title",
+      "required": true
     },
     "author": {
       "type": "relation",
@@ -46,7 +49,7 @@
       "inversedBy": "posts"
     },
     "content": {
-      "type": "richtext"
+      "type": "blocks"
     }
   }
 }

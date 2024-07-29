@@ -913,21 +913,21 @@ export interface ApiPostPost extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
-    excerpt: Attribute.Text;
+    title: Attribute.String & Attribute.Required;
+    excerpt: Attribute.Text & Attribute.Required;
     featuredImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     category: Attribute.Relation<
       'api::post.post',
       'manyToOne',
       'api::category.category'
     >;
-    slug: Attribute.UID<'api::post.post', 'title'>;
+    slug: Attribute.UID<'api::post.post', 'title'> & Attribute.Required;
     author: Attribute.Relation<
       'api::post.post',
       'manyToOne',
       'api::author.author'
     >;
-    content: Attribute.RichText;
+    content: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
