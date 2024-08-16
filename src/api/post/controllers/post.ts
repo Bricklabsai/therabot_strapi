@@ -13,7 +13,14 @@ export default factories.createCoreController('api::post.post', ({ strapi }) => 
         let slug = id;
         ctx.params['slug'] = slug;
         const entity = await strapi.db.query('api::post.post').findOne({
-            where: { slug }, populate: true,
+            where: { slug }, populate: {
+                featuredImage: true,
+                author: {
+                    populate: {
+                        image: true
+                    }
+                }
+            }
         });
         const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
 
