@@ -19,7 +19,8 @@ export default factories.createCoreController('api::post.post', ({ strapi }) => 
                     populate: {
                         image: true
                     }
-                }
+                },
+                category: true,
             }
         });
         const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
