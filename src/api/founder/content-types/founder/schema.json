@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "founders",
+  "info": {
+    "singularName": "founder",
+    "pluralName": "founders",
+    "displayName": "Founder"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "Email": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "details": {
+      "type": "text"
+    }
+  }
+}

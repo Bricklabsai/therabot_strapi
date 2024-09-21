@@ -861,6 +861,40 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiFounderFounder extends Schema.CollectionType {
+  collectionName: 'founders';
+  info: {
+    singularName: 'founder';
+    pluralName: 'founders';
+    displayName: 'Founder';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    firstName: Attribute.String;
+    lastName: Attribute.String;
+    Email: Attribute.String;
+    website: Attribute.String;
+    details: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::founder.founder',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::founder.founder',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiOrderOrder extends Schema.CollectionType {
   collectionName: 'orders';
   info: {
@@ -993,6 +1027,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
+      'api::founder.founder': ApiFounderFounder;
       'api::order.order': ApiOrderOrder;
       'api::post.post': ApiPostPost;
       'api::product.product': ApiProductProduct;
