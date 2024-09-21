@@ -4,7 +4,8 @@
   "info": {
     "singularName": "founder",
     "pluralName": "founders",
-    "displayName": "Founder"
+    "displayName": "Founder",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,7 +18,7 @@
     "lastName": {
       "type": "string"
     },
-    "Email": {
+    "email": {
       "type": "string"
     },
     "website": {

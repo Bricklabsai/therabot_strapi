@@ -867,6 +867,7 @@ export interface ApiFounderFounder extends Schema.CollectionType {
     singularName: 'founder';
     pluralName: 'founders';
     displayName: 'Founder';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -874,7 +875,7 @@ export interface ApiFounderFounder extends Schema.CollectionType {
   attributes: {
     firstName: Attribute.String;
     lastName: Attribute.String;
-    Email: Attribute.String;
+    email: Attribute.String;
     website: Attribute.String;
     details: Attribute.Text;
     createdAt: Attribute.DateTime;
