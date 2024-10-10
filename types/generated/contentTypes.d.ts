@@ -1008,6 +1008,40 @@ export interface ApiProductProduct extends Schema.CollectionType {
   };
 }
 
+export interface ApiTherapyRegistrationTherapyRegistration
+  extends Schema.CollectionType {
+  collectionName: 'therapy_registrations';
+  info: {
+    singularName: 'therapy-registration';
+    pluralName: 'therapy-registrations';
+    displayName: 'Therapy registration';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    fullName: Attribute.String;
+    phoneNumber: Attribute.String;
+    email: Attribute.Email;
+    address: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::therapy-registration.therapy-registration',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::therapy-registration.therapy-registration',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1032,6 +1066,7 @@ declare module '@strapi/types' {
       'api::order.order': ApiOrderOrder;
       'api::post.post': ApiPostPost;
       'api::product.product': ApiProductProduct;
+      'api::therapy-registration.therapy-registration': ApiTherapyRegistrationTherapyRegistration;
     }
   }
 }
